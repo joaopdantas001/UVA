@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Avaliação</title>
+</head>
+<body>
+  <h1>Avaliação</h1>
+
+  <form action="" method="post">
+    <label for="ao1">Avaliação On-line 1:</label>
+    <input type="number" name="ao1" id="ao1" min="0" max="10" required>
+
+    <label for="ao2">Avaliação On-line 2:</label>
+    <input type="number" name="ao2" id="ao2" min="0" max="10" required>
+
+    <label for="a">Avaliação:</label>
+    <input type="number" name="a" id="a" min="0" max="10" required>
+
+    <input type="submit" value="Enviar">
+  </form>
+
+  <script>
+    function calcular() {
+      const ao1 = document.getElementById("ao1").value;
+      const ao2 = document.getElementById("ao2").value;
+      const a = document.getElementById("a").value;
+
+      const a1 = (ao1 + ao2) * 0.4;
+      const a2 = a * 0.6;
+
+      const nf = a1 + a2;
+
+      const resultado = nf > 6 ? "Aprovado" : "Reprovado";
+
+      document.getElementById("resultado").innerHTML = resultado;
+    }
+
+    document.getElementById("submit").addEventListener("click", calcular);
+  </script>
+
+  <div id="resultado"></div>
+</body>
+</html>
